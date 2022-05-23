@@ -1,4 +1,4 @@
-def imageName="192.168.44.44:8082/docker_registry/frontend"
+def imageName="192.168.44.44:8082/docker_registry/Backend"
 def dockerRegistry="https://192.168.44.44:8082/"
 def registryCredentials="artifactory"
 def dockerTag=""
@@ -20,9 +20,9 @@ pipeline {
             }
 
         }
-        stage('Clone Frontend repo') {
+        stage('Clone backend repo') {
             steps {
-                git branch: 'main', url: 'https://github.com/ikorkosz/Frontend.git'
+                checkout scm
             }
         }
 
